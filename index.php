@@ -6,6 +6,8 @@ $q = isset($_GET['q']) ? $_GET['q'] : '';
 if (!empty($q)) {
     $queryString = '_search';
     $params = [
+        "from" => 0,
+        "size" => 20, //get 20 records
         "query" => [
             "multi_match" => [
                 "query" => $q,
